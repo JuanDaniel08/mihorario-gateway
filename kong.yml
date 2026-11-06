@@ -1,0 +1,23 @@
+_format_version: "3.0"
+
+services:
+  - name: backend
+    url: http://backend.railway.internal:3000   # nombre y puerto reales de tu servicio
+    routes:
+      - name: api
+        paths: ["/"]
+        strip_path: false
+    plugins:
+      - name: rate-limiting
+        config:
+          minute: 100
+          policy: local
+      - name: request-size-limiting
+        config:
+          allowed_payload_size: 2        # MB
+      - name: cors
+        config:
+          origins: ["https://TU-FRONTEND.up.railway.app"]
+          methods: [GET, POST, PUT, PATCH, DELETE, OPTIONS]
+          headers: [Authorization, Content-Type]
+          credentials: true
