@@ -17,7 +17,7 @@ services:
           allowed_payload_size: 2        # MB
       - name: cors
         config:
-          origins: ["https://TU-FRONTEND.up.railway.app"]
+          origins: ["https://frontend-production-8438.up.railway.app"]
           methods: [GET, POST, PUT, PATCH, DELETE, OPTIONS]
           headers: [Authorization, Content-Type]
           credentials: true
