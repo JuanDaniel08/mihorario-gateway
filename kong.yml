@@ -2,7 +2,7 @@ _format_version: "3.0"
 
 services:
   - name: backend
-    url: http://MiHorario.railway.internal:3000   # nombre y puerto reales de tu servicio
+    url: http://mihorario-production-944f.up.railway.app   # nombre y puerto reales de tu servicio
     routes:
       - name: api
         paths: ["/"]
